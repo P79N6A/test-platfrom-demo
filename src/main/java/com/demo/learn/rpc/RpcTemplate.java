@@ -1,6 +1,6 @@
 package com.demo.learn.rpc;
 
-import com.demo.learn.Exchange;
+import com.demo.learn.HttpExchange;
 
 /**
  * Created by teemper on 2019/3/18, 22:34.
@@ -12,7 +12,7 @@ import com.demo.learn.Exchange;
  * please kindly write to teemper@163.com if anthing.
  * from win.
  */
-public interface RpcTemplate extends Exchange {
+public interface RpcTemplate extends HttpExchange {
 
 
 

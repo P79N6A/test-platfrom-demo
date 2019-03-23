@@ -139,7 +139,7 @@ public class HttpClientResponse<T> extends MessageEntity<T> implements ClientRes
     }
 
 
-    private static class DefaultBuilder implements BodyBuilder {
+     static class DefaultBuilder implements BodyBuilder {
 
         private final HttpStatus statusCode;
 

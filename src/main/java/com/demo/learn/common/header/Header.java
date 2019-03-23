@@ -1,9 +1,6 @@
 package com.demo.learn.common.header;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by teemper on 2019/3/18, 22:44.
@@ -49,5 +46,30 @@ public class Header {
     public void putAll(Header header) {
         headers.putAll(header.getHeaders());
     }
+
+
+    public Map<String, String> documentHeader() {
+        Map<String, String> result = new HashMap<>();
+        headers.forEach((K,V) ->result.put(K, reduce(V)));
+        return result;
+    }
+
+    public String getValue(String key) {
+        return reduce(headers.get(key));
+    }
+
+    protected static String reduce(Collection<String> collection) {
+        StringBuilder builder = new StringBuilder();
+        for (Iterator<String> iterator = collection.iterator(); iterator.hasNext();) {
+            String type = iterator.next();
+            builder.append(type);
+            if (iterator.hasNext()) {
+                builder.append(", ");
+            }
+        }
+        return builder.toString();
+    }
+
+
 
 }

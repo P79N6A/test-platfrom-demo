@@ -5,6 +5,8 @@ import com.demo.learn.common.method.HttpMethod;
 import com.demo.learn.utils.StringUtils;
 
 import java.nio.charset.Charset;
+import java.nio.charset.CharsetEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 /**
@@ -23,6 +25,7 @@ public class HttpHeader extends Header {
     public static final String CONTENT_TYPE = "Content-Type";
     public static final String ACCEPT_CHARSET = "Accept-Charset";
     public static final String ALLOW = "Allow";
+    public static final String AUTHORIZATION = "Authorization";
 
     public void setAccept(List<String> accepts) {
         set(ACCEPT, reduce(accepts));
@@ -59,17 +62,28 @@ public class HttpHeader extends Header {
         this.headers.put(headerName, headerValues);
     }
 
-    private static String reduce(Collection<String> collection) {
-        StringBuilder builder = new StringBuilder();
-        for (Iterator<String> iterator = collection.iterator(); iterator.hasNext();) {
-            String type = iterator.next();
-            builder.append(type);
-            if (iterator.hasNext()) {
-                builder.append(", ");
-            }
-        }
-        return builder.toString();
+
+    public void setBasicAuth(String username, String password) {
+        setBasicAuth(username, password, null);
     }
+
+    public void setBasicAuth(String username, String password, Charset charset) {
+        if (charset == null) {
+            charset = StandardCharsets.ISO_8859_1;
+        }
+
+        CharsetEncoder encoder = charset.newEncoder();
+        if (!encoder.canEncode(username) || !encoder.canEncode(password)) {
+            throw new IllegalArgumentException(
+                    "Username or password contains characters that cannot be encoded to " + charset.displayName());
+        }
+
+        String credentialsString = username + ":" + password;
+        byte[] encodedBytes = Base64.getEncoder().encode(credentialsString.getBytes(charset));
+        String encodedCredentials = new String(encodedBytes, charset);
+        set(AUTHORIZATION, "Basic " + encodedCredentials);
+    }
+
 
 
 }
