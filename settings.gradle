@@ -1,2 +1,5 @@
 rootProject.name = 'test-platfrom-demo'
+include 'test.pre.condition'
+include 'platform-core'
+include 'platform-intg-test'
 
