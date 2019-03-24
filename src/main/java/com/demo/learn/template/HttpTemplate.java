@@ -1,12 +1,11 @@
 package com.demo.learn.template;
 
 import com.demo.learn.HttpExchange;
-import com.demo.learn.common.client.ClientRequest;
-import com.demo.learn.common.client.ClientResponse;
+
 import com.demo.learn.common.client.http.HttpClientRequest;
 import com.demo.learn.common.client.http.HttpClientResponse;
-import com.demo.learn.common.converter.JsonMessageConverter;
-import com.demo.learn.common.converter.MessageConverter;
+import com.demo.learn.common.converter.http.strategy.HttpJsonEntityConverter;
+import com.demo.learn.common.converter.http.HttpEntityConverter;
 import com.demo.learn.common.header.Header;
 import com.demo.learn.common.header.http.HttpHeader;
 import com.demo.learn.exception.HttpExchangeException;
@@ -14,17 +13,45 @@ import okhttp3.*;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
 
 public class HttpTemplate<REQ, RESP> implements HttpExchange<REQ, RESP> {
-    MessageConverter<String> respMessageConverter = new JsonMessageConverter();
-    OkHttpClient okHttpClient = new OkHttpClient();
+    private List<HttpEntityConverter<REQ>> requestMessageConverters;
+    private List<HttpEntityConverter<RESP>> responseMessageConverters;
+    private OkHttpClient okHttpClient = new OkHttpClient();
+
+    public HttpTemplate() {
+        requestMessageConverters = new ArrayList<>();
+        requestMessageConverters.add(new HttpJsonEntityConverter<REQ>());
+
+        responseMessageConverters = new ArrayList<>();
+
+    }
+
 
     @Override
     public HttpClientResponse<RESP> exchange(HttpClientRequest<REQ> requestMessage) {
         if (requestMessage==null) throw new IllegalArgumentException("request should not be null.");
 
+        Request request = buildRequest(requestMessage);
+        try(Response response = okHttpClient.newCall(request).execute()) {
+            //TODO, using message converter to convert the message and it can be easily translate into RESP type.
+            return buildResponse(response);
+        }catch (IOException e) {
+            throw new HttpExchangeException("http request error", e);
+        }
+    }
+
+    private HttpClientResponse<RESP> buildResponse(Response response) {
+        return null;
+    }
+
+
+    private Request buildRequest(HttpClientRequest<REQ> requestMessage) {
         MediaType mediaType = MediaType.parse(getContentType(requestMessage.getHeaders()));
+
+        for (HttpEntityConverter<String> messageConverters)
 
         RequestBody body = RequestBody.create(mediaType, requestMessage.getBody().toString());
 
@@ -40,16 +67,7 @@ public class HttpTemplate<REQ, RESP> implements HttpExchange<REQ, RESP> {
             String error= String.format("url is not acceptable, please check url: %s", requestMessage.getUrl());
             throw new HttpExchangeException(error, e);
         }
-
-        try(Response response = okHttpClient.newCall(request).execute()) {
-            //TODO, using message converter to convert the message and it can be easily translate into RESP type.
-
-            return  HttpClientResponse.ok(response.body()).;
-
-
-        }catch (IOException e) {
-            throw new HttpExchangeException("http request error", e);
-        }
+        return request;
     }
 
 
