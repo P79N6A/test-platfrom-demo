@@ -1,0 +1,10 @@
+{
+  "clientConfs": [{
+    "name": "zeus.eos",
+    "protocol": "thrift",
+    "group": "alta1-zeus-sync-01",
+    "interfaces": [
+      "me.ele.tradecenter.eos.api.ElemeOrderService"
+    ]
+  }]
+}

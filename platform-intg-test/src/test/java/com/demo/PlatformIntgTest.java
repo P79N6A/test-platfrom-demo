@@ -24,7 +24,7 @@ public class PlatformIntgTest {
 
     @Test
     public void testPost() throws URISyntaxException {
-        HttpClientRequest<Person> person = HttpClientRequest.post(new URI("http://localhost:8080/demo")).header(new HttpHeader().contentType("application/json")).body(new Person("chengjianPost", 20));
+        HttpClientRequest<Person> person = HttpClientRequest.post(new URI("http://localhost:8080/demo")).header(new HttpHeader().contentType("application/json")).body(new Person("sinePost", 20));
         Person result = template.exchange(person, Person.class).getBody();
         System.out.println(result);
 

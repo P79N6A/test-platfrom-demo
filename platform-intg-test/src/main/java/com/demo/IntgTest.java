@@ -1,7 +1,6 @@
 package com.demo;
 
 import com.demo.learn.common.client.http.HttpClientRequest;
-import com.demo.learn.common.client.http.HttpClientResponse;
 import com.demo.learn.common.header.http.HttpHeader;
 import com.demo.learn.template.HttpTemplate;
 
@@ -21,7 +20,7 @@ public class IntgTest {
 
 
         //**************  post  *******************
-        HttpClientRequest<Person> person = HttpClientRequest.post(new URI("http://localhost:8080/demo")).header(new HttpHeader().contentType("application/json")).body(new Person("chengjianPost", 20));
+        HttpClientRequest<Person> person = HttpClientRequest.post(new URI("http://localhost:8080/demo")).header(new HttpHeader().contentType("application/json")).body(new Person("sinePost", 20));
         Person result = template.exchange(person, Person.class).getBody();
         System.out.println(result);
 

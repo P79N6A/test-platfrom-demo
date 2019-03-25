@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":platform-intg-test:main" external.linked.project.path="$MODULE_DIR$/../../../platform-intg-test" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="com.ele.me.learn" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/../../../platform-intg-test/out/production/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../platform-intg-test/src/main">
+      <sourceFolder url="file://$MODULE_DIR$/../../../platform-intg-test/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../platform-intg-test/src/main/resources" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="com.ele.me.learn.platform-core.main" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-log4j12:1.7.26" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-databind:2.9.8" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.26" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:3.14.0" level="project" />
+    <orderEntry type="library" name="Gradle: log4j:log4j:1.2.17" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
+    <orderEntry type="library" name="Gradle: com.fasterxml.jackson.core:jackson-core:2.9.8" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.17.2" level="project" />
+  </component>
+</module>

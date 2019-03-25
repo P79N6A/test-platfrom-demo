@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="com.ele.me.learn.platform-core.main" target="1.8" />
+      <module name="com.ele.me.learn.platform-core.test" target="1.8" />
+      <module name="com.ele.me.learn.platform-intg-test.main" target="1.8" />
+      <module name="com.ele.me.learn.platform-intg-test.test" target="1.8" />
+      <module name="com.ele.me.learn.test-platfrom-demo.main" target="1.8" />
+      <module name="com.ele.me.learn.test-platfrom-demo.test" target="1.8" />
+      <module name="com.ele.me.learn.test.pre.condition.main" target="1.8" />
+      <module name="com.ele.me.learn.test.pre.condition.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

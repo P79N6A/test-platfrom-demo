@@ -22,7 +22,7 @@ public class ApiApplication {
 
     @GetMapping("/demo")
     public Person getDemoPerson () {
-        return new Person("chengjian", 24);
+        return new Person("sine", 24);
     }
 
     @PostMapping("/demo")

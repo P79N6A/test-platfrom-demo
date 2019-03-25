@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/platform-core/com.ele.me.learn.platform-core.iml" filepath="$PROJECT_DIR$/.idea/modules/platform-core/com.ele.me.learn.platform-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/platform-core/com.ele.me.learn.platform-core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/platform-core/com.ele.me.learn.platform-core.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/platform-core/com.ele.me.learn.platform-core.test.iml" filepath="$PROJECT_DIR$/.idea/modules/platform-core/com.ele.me.learn.platform-core.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/platform-intg-test/com.ele.me.learn.platform-intg-test.iml" filepath="$PROJECT_DIR$/.idea/modules/platform-intg-test/com.ele.me.learn.platform-intg-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/platform-intg-test/com.ele.me.learn.platform-intg-test.main.iml" filepath="$PROJECT_DIR$/.idea/modules/platform-intg-test/com.ele.me.learn.platform-intg-test.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/platform-intg-test/com.ele.me.learn.platform-intg-test.test.iml" filepath="$PROJECT_DIR$/.idea/modules/platform-intg-test/com.ele.me.learn.platform-intg-test.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.ele.me.learn.test-platfrom-demo.iml" filepath="$PROJECT_DIR$/.idea/modules/com.ele.me.learn.test-platfrom-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.ele.me.learn.test-platfrom-demo.main.iml" filepath="$PROJECT_DIR$/.idea/modules/com.ele.me.learn.test-platfrom-demo.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/com.ele.me.learn.test-platfrom-demo.test.iml" filepath="$PROJECT_DIR$/.idea/modules/com.ele.me.learn.test-platfrom-demo.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/test.pre.condition/com.ele.me.learn.test.pre.condition.iml" filepath="$PROJECT_DIR$/.idea/modules/test.pre.condition/com.ele.me.learn.test.pre.condition.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/test.pre.condition/com.ele.me.learn.test.pre.condition.main.iml" filepath="$PROJECT_DIR$/.idea/modules/test.pre.condition/com.ele.me.learn.test.pre.condition.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/test.pre.condition/com.ele.me.learn.test.pre.condition.test.iml" filepath="$PROJECT_DIR$/.idea/modules/test.pre.condition/com.ele.me.learn.test.pre.condition.test.iml" />
+    </modules>
+  </component>
+</project>
